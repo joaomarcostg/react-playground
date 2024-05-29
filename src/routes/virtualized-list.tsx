@@ -1,9 +1,9 @@
-import "./App.css";
-import VirtualizedList from "./components/VirtualizedList";
+import VirtualizedList from "../components/VirtualizedList";
 
-function App() {
+function VirtualizedListPage() {
   return (
     <>
+      <h1>Virtualized List</h1>
       <VirtualizedList
         numberOfElements={10000}
         listItemHeight={24}
@@ -14,4 +14,4 @@ function App() {
   );
 }
 
-export default App;
+export default VirtualizedListPage;

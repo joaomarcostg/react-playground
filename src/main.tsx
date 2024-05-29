@@ -6,7 +6,7 @@ import {
   DragAndDropPage,
 } from "./routes/index.tsx";
 
-import "./index.css";
+import "./styles/index.css";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 
 const router = createBrowserRouter([

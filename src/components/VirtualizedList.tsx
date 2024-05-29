@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { throttle } from "../utils";
+import { throttle } from "../utils/index";
 
 function VirtualizedList({
   numberOfElements,
@@ -42,7 +42,7 @@ function VirtualizedList({
     const items: JSX.Element[] = [];
 
     for (let i = startIndex; i < startIndex + stopIndex; i++) {
-      items.push(<ListItem index={i} />);
+      items.push(<ListItem key={i} index={i} />);
     }
 
     return items;
@@ -52,7 +52,6 @@ function VirtualizedList({
     <>
       <h3>List items</h3>
       <div
-        className="list-wrapper"
         onScroll={handleScrollChange}
         style={{
           height: `${viewPortHeight}px`,
@@ -61,13 +60,11 @@ function VirtualizedList({
         }}
       >
         <div
-          className="full-list"
           style={{
             height: `${totalContentHeight}px`,
           }}
         >
           <ul
-            className="list-container"
             style={{
               transform: `translateY(${startIndex * listItemHeight}px)`,
             }}
@@ -81,7 +78,7 @@ function VirtualizedList({
 }
 
 function ListItem({ index }: { index: number }) {
-  return <li key={index}>List item {index}</li>;
+  return <li>List item {index}</li>;
 }
 
 export default VirtualizedList;
